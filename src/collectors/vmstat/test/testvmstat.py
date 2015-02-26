@@ -36,7 +36,7 @@ class TestVMStatCollector(CollectorTestCase):
     def test_should_open_proc_vmstat(self, publish_mock, open_mock):
         open_mock.return_value = StringIO('')
         self.collector.collect()
-        open_mock.assert_called_once_with('/proc/vmstat')
+        open_mock.assert_called_once_with('/host_proc/vmstat')
 
     @patch.object(Collector, 'publish')
     def test_should_work_with_real_data(self, publish_mock):

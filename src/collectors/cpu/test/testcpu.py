@@ -35,10 +35,10 @@ class TestCPUCollector(CollectorTestCase):
     @patch('os.access', Mock(return_value=True))
     @patch.object(Collector, 'publish')
     def test_should_open_proc_stat(self, publish_mock, open_mock):
-        CPUCollector.PROC = '/proc/stat'
+        CPUCollector.PROC = '/host_proc/stat'
         open_mock.return_value = StringIO('')
         self.collector.collect()
-        open_mock.assert_called_once_with('/proc/stat')
+        open_mock.assert_called_once_with('/host_proc/stat')
 
     @patch.object(Collector, 'publish')
     def test_should_work_with_synthetic_data(self, publish_mock):
@@ -190,7 +190,7 @@ class TestCPUCollectorNormalize(CollectorTestCase):
         }
 
     # convert an input dict with values to a string that might come from
-    # /proc/stat
+    # /host_proc/stat
     def input_dict_to_proc_string(self, cpu_id, dict_):
         return ("cpu%s %i %i %i %i 0 0 0 0 0 0" %
                 (cpu_id,

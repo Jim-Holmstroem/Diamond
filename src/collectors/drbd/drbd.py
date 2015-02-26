@@ -3,7 +3,7 @@
 """
 DRBD metric collector
 
-  Read and publish metrics from all available resources in /proc/drbd
+  Read and publish metrics from all available resources in /host_proc/drbd
 """
 
 import diamond.collector
@@ -55,7 +55,7 @@ class DRBDCollector(diamond.collector.Collector):
 
         results = dict()
         try:
-            statusfile = open('/proc/drbd', 'r')
+            statusfile = open('/host_proc/drbd', 'r')
             current_resource = ''
             for line in statusfile:
                 if re.search('version', line) is None:

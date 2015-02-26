@@ -89,7 +89,7 @@ class TestDiskSpaceCollector(CollectorTestCase):
                 'mount_point': '/'}
         })
 
-        omock.assert_called_once_with('/proc/mounts')
+        omock.assert_called_once_with('/host_proc/mounts')
         return result
 
     @run_only_if_major_is_available

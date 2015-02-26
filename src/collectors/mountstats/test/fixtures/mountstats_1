@@ -1,16 +1,16 @@
 device rootfs mounted on / with fstype rootfs
-device proc mounted on /proc with fstype proc
+device proc mounted on /host_proc with fstype proc
 device sysfs mounted on /sys with fstype sysfs
 device devtmpfs mounted on /dev with fstype devtmpfs
 device devpts mounted on /dev/pts with fstype devpts
 device tmpfs mounted on /dev/shm with fstype tmpfs
 device /dev/mapper/myvg-rootvol mounted on / with fstype ext4
-device /proc/bus/usb mounted on /proc/bus/usb with fstype usbfs
+device /host_proc/bus/usb mounted on /host_proc/bus/usb with fstype usbfs
 device /dev/sda1 mounted on /boot with fstype ext3
 device /dev/loop0 mounted on /iso/rhels6.3 with fstype iso9660
-device none mounted on /proc/sys/fs/binfmt_misc with fstype binfmt_misc
+device none mounted on /host_proc/sys/fs/binfmt_misc with fstype binfmt_misc
 device sunrpc mounted on /var/lib/nfs/rpc_pipefs with fstype rpc_pipefs
-device nfsd mounted on /proc/fs/nfsd with fstype nfsd
+device nfsd mounted on /host_proc/fs/nfsd with fstype nfsd
 device server:/export/path1 mounted on /mnt/path1 with fstype nfs statvers=1.0
 	opts:	rw,vers=3,rsize=32768,wsize=32768,namlen=255,acregmin=3,acregmax=60,acdirmin=30,acdirmax=60,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.0.0.10,mountvers=3,mountport=4048,mountproto=tcp,local_lock=none
 	age:	15860876

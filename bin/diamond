@@ -154,7 +154,7 @@ def main():
             # Check existing pid file
             if pid:
                 # Check if pid is real
-                if not os.path.exists("/".join(["/proc", str(pid), "cmdline"])):
+                if not os.path.exists("/".join(["/host_proc", str(pid), "cmdline"])):
                     # Pid is not real
                     os.unlink(options.pidfile)
                     pid = None

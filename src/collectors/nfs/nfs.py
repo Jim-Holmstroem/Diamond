@@ -1,11 +1,11 @@
 # coding=utf-8
 
 """
-The NfsCollector collects nfs utilization metrics using /proc/net/rpc/nfs.
+The NfsCollector collects nfs utilization metrics using /host_proc/net/rpc/nfs.
 
 #### Dependencies
 
- * /proc/net/rpc/nfs
+ * /host_proc/net/rpc/nfs
 
 """
 
@@ -15,7 +15,7 @@ import os
 
 class NfsCollector(diamond.collector.Collector):
 
-    PROC = '/proc/net/rpc/nfs'
+    PROC = '/host_proc/net/rpc/nfs'
 
     def get_default_config_help(self):
         config_help = super(NfsCollector, self).get_default_config_help()

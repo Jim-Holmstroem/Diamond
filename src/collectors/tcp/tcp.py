@@ -5,8 +5,8 @@ The TCPCollector class collects metrics on TCP stats
 
 #### Dependencies
 
- * /proc/net/netstat
- * /proc/net/snmp
+ * /host_proc/net/netstat
+ * /host_proc/net/snmp
 
 #### Allowed Metric Names
 <table>
@@ -183,8 +183,8 @@ import os
 class TCPCollector(diamond.collector.Collector):
 
     PROC = [
-        '/proc/net/netstat',
-        '/proc/net/snmp'
+        '/host_proc/net/netstat',
+        '/host_proc/net/snmp'
     ]
 
     GAUGES = [

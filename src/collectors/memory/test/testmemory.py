@@ -37,7 +37,7 @@ class TestMemoryCollector(CollectorTestCase):
     def test_should_open_proc_meminfo(self, publish_mock, open_mock):
         open_mock.return_value = StringIO('')
         self.collector.collect()
-        open_mock.assert_called_once_with('/proc/meminfo')
+        open_mock.assert_called_once_with('/host_proc/meminfo')
 
     @patch.object(Collector, 'publish')
     def test_should_work_with_real_data(self, publish_mock):

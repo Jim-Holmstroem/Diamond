@@ -1,11 +1,11 @@
 # coding=utf-8
 
 """
-The NfsdCollector collects nfsd utilization metrics using /proc/net/rpc/nfsd.
+The NfsdCollector collects nfsd utilization metrics using /host_proc/net/rpc/nfsd.
 
 #### Dependencies
 
- * /proc/net/rpc/nfsd
+ * /host_proc/net/rpc/nfsd
 
 """
 
@@ -15,7 +15,7 @@ import os
 
 class NfsdCollector(diamond.collector.Collector):
 
-    PROC = '/proc/net/rpc/nfsd'
+    PROC = '/host_proc/net/rpc/nfsd'
 
     def get_default_config_help(self):
         config_help = super(NfsdCollector, self).get_default_config_help()

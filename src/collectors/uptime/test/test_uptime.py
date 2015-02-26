@@ -38,7 +38,7 @@ class TestUptimeCollector(CollectorTestCase):
     def test_should_open_proc_uptime(self, publish_mock, open_mock):
         open_mock.return_value = StringIO('1288459.83 10036802.26')
         self.collector.collect()
-        open_mock.assert_called_once_with('/proc/uptime')
+        open_mock.assert_called_once_with('/host_proc/uptime')
 
     @patch.object(Collector, 'publish')
     def test_sanity_check(self, publish_mock):

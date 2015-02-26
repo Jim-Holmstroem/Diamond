@@ -5,7 +5,7 @@ Collect Uptime metrics
 
 #### Dependencies
 
-    * /proc/uptime
+    * /host_proc/uptime
 
 """
 
@@ -16,7 +16,7 @@ import os
 
 
 class UptimeCollector(Collector):
-    PROC = '/proc/uptime'
+    PROC = '/host_proc/uptime'
 
     def get_default_config(self):
         config = super(UptimeCollector, self).get_default_config()

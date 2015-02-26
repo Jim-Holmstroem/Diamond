@@ -5,7 +5,7 @@ The IPCollector class collects metrics on IP stats
 
 #### Dependencies
 
- * /proc/net/snmp
+ * /host_proc/net/snmp
 
 #### Allowed Metric Names
 <table>
@@ -30,7 +30,7 @@ import os
 class IPCollector(diamond.collector.Collector):
 
     PROC = [
-        '/proc/net/snmp',
+        '/host_proc/net/snmp',
     ]
 
     GAUGES = [

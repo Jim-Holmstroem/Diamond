@@ -35,16 +35,16 @@ class TestTCPCollector(CollectorTestCase):
     @patch('__builtin__.open')
     @patch('diamond.collector.Collector.publish')
     def test_should_open_proc_net_netstat(self, publish_mock, open_mock):
-        TCPCollector.PROC = ['/proc/net/netstat']
+        TCPCollector.PROC = ['/host_proc/net/netstat']
         open_mock.return_value = StringIO('')
         self.collector.collect()
-        open_mock.assert_called_once_with('/proc/net/netstat')
+        open_mock.assert_called_once_with('/host_proc/net/netstat')
 
     @patch('os.access', Mock(return_value=True))
     @patch('__builtin__.open')
     @patch('diamond.collector.Collector.publish')
     def test_should_work_with_synthetic_data(self, publish_mock, open_mock):
-        TCPCollector.PROC = ['/proc/net/netstat']
+        TCPCollector.PROC = ['/host_proc/net/netstat']
         self.setUp(['A', 'C'])
         open_mock.return_value = StringIO('''
 TcpExt: A B C

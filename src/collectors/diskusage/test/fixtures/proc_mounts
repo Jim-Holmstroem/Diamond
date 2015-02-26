@@ -1,6 +1,6 @@
 rootfs / rootfs rw 0 0
 none /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
-none /proc proc rw,nosuid,nodev,noexec,relatime 0 0
+none /host_proc proc rw,nosuid,nodev,noexec,relatime 0 0
 none /dev devtmpfs rw,relatime,size=24769364k,nr_inodes=6192341,mode=755 0 0
 none /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 0 0
 fusectl /sys/fs/fuse/connections fusectl rw,relatime 0 0

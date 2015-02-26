@@ -38,7 +38,7 @@ class TestNetworkCollector(CollectorTestCase):
     def test_should_open_proc_net_dev(self, publish_mock, open_mock):
         open_mock.return_value = StringIO('')
         self.collector.collect()
-        open_mock.assert_called_once_with('/proc/net/dev')
+        open_mock.assert_called_once_with('/host_proc/net/dev')
 
     @patch.object(Collector, 'publish')
     def test_should_work_with_virtual_interfaces_and_bridges(self,

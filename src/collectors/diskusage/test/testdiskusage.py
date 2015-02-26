@@ -41,7 +41,7 @@ class TestDiskUsageCollector(CollectorTestCase):
         result = self.collector.get_disk_statistics()
         patch_open.stop()
 
-        open_mock.assert_called_once_with('/proc/diskstats')
+        open_mock.assert_called_once_with('/host_proc/diskstats')
 
         self.assertEqual(
             sorted(result.keys()),
